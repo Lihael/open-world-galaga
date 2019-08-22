@@ -12,4 +12,4 @@ func _ready():
 #func _process(delta):
 #	pass
 func _pressed():
-	get_tree().change_scene("res://gamemap.tscn")
+	get_tree().change_scene("res://Scenes/gamemap.tscn")
