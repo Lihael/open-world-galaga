@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player sprite.png" type="Texture" id=1]
 
@@ -10,15 +10,50 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="Node2D"]
-position = Vector2( 552.322, 311.575 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 471.495, 507.372 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -61.4502, 180.887 )
-scale = Vector2( 0.0588031, 0.0611621 )
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.0171429, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 1, 0, 0, 1, 0.36, 0.36, 0.36, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+width = 2061
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 429.398, 181.048 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( -78.0234, 163.512 )
+scale = Vector2( 0.0264348, 0.0274953 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+rotation = -0.00295545
+scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="AnimatedSprite"]
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D/AnimatedSprite"]
+scale = Vector2( 0.1, 0.1 )
 current = true
 
-[node name="Position2D" type="Position2D" parent="AnimatedSprite"]
+[node name="Position2D" type="Position2D" parent="KinematicBody2D/AnimatedSprite"]
+scale = Vector2( 0.1, 0.1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+rotation = -0.00140606
+scale = Vector2( 0.1, 0.1 )
+shape = SubResource( 2 )
+
+[node name="TextEdit" type="TextEdit" parent="KinematicBody2D"]
+margin_left = 395.377
+margin_top = 818.437
+margin_right = 455.377
+margin_bottom = 848.437
+rect_rotation = 0.234919
+text = "Health"
+
+[node name="Polygon2D" type="Polygon2D" parent="KinematicBody2D/TextEdit"]
+rotation = -0.00165818
+color = Color( 0, 0, 0, 1 )
+texture = SubResource( 4 )
