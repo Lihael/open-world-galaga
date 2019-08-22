@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://player sprite.png" type="Texture" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 552.322, 311.575 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -61.4502, 180.887 )
+scale = Vector2( 0.0588031, 0.0611621 )
+frames = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite"]
+current = true
+
+[node name="Position2D" type="Position2D" parent="AnimatedSprite"]
