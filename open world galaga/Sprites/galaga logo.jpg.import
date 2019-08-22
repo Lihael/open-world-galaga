@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player sprite.png-815cb8f8be27834497def816230818bb.stex"
+path="res://.import/galaga logo.jpg-3945bd042eb0610d2bad76641eb91bec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player sprite.png"
-dest_files=[ "res://.import/player sprite.png-815cb8f8be27834497def816230818bb.stex" ]
+source_file="res://Sprites/galaga logo.jpg"
+dest_files=[ "res://.import/galaga logo.jpg-3945bd042eb0610d2bad76641eb91bec.stex" ]
 
 [params]
 
